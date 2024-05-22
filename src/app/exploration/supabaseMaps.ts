@@ -16,6 +16,7 @@ export async function saveConnections(connections: any) {
   return data;
 }
 
+
 export async function getMapCoordinates() {
   let { data: map, error } = await supabase.from("map").select("*");
   return map;
