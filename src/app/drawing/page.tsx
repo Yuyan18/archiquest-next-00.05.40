@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Page() {
   const [image, setImage] = useState<string>("");
   const [prompt, setPrompt] = useState<string>(
-    "a masterful piece of art, dutch realism, oil on canvas"
+    "An alien planet landscape photograph that fits the name of the planet showing massively different biome, terrain, environment, and climate conditions."
   );
 
   const onCreate = (img: string) => {

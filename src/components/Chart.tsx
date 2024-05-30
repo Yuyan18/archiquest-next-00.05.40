@@ -48,6 +48,7 @@ const ZoomablePannableCanvas = ({
   const drawMap = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
+
     if (canvas && ctx) {
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -67,6 +68,7 @@ const ZoomablePannableCanvas = ({
   const drawFeatures = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
+
     if (canvas && ctx) {
       //draw all features
       features.forEach((feature) => {
@@ -81,6 +83,7 @@ const ZoomablePannableCanvas = ({
           x * mapScale,
           y * mapScale - 2 / scale
         );
+
         ctx.beginPath();
         // Define the circle
         ctx.arc(x * mapScale, y * mapScale + 2, 5 / scale, 0, 2 * Math.PI);
@@ -114,7 +117,9 @@ const ZoomablePannableCanvas = ({
 
     const handleClick = (mouseX: number, mouseY: number) => {
       if (!mouseClick) return;
+
       setMouseClick(null);
+
       const canvas = canvasRef.current;
       if (canvas) {
         const clickedFeature = features.find((feature) => {
@@ -126,6 +131,7 @@ const ZoomablePannableCanvas = ({
           if (distance < 20 / scale) console.log(feature.description);
           return distance <= 20 / scale;
         });
+
         if (clickedFeature) {
           onFeatureClick(clickedFeature);
         } else {
@@ -135,6 +141,7 @@ const ZoomablePannableCanvas = ({
 
     const addFeatures = (newFeatures: MapNode[]) => {
       if (newFeatures.length === 0) return;
+
       // Use the spread operator to create a new array with the new item
       setFeatures((prevItems) => [...prevItems, ...newFeatures]);
     };
