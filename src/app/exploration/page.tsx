@@ -204,7 +204,7 @@ export default function ExplorationPage() {
           />
           {showSketch && (
             <SketchToImage
-              prompt={`An alien planet landscape photograph of ${selectedLocation?.description}, NASA exploration rover POV, dirt or water on lens`}
+              prompt={`A alien planet landscape photograph of ${selectedLocation?.description}, massively different biome, terrain, environment, and climate conditions.`}
               onCreate={handleCreateImage}
             />
           )}
