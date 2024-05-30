@@ -149,5 +149,5 @@ export default function ExplorationPage() {
   );
 }
 
-const newLocationPrompt = `You describe new map locations as a player adventures from a current location in a given direction.
-Return the new map location as a valid JSON object in the format {description:string, x:int, y:int, z:int}. Only return the JSON object with no other text or explanation.`;
+const newLocationPrompt = `You describe new planet name as a player travel from a current planet in a given direction.
+Return the new planet location as a valid JSON object in the format {description:string, x:int, y:int, z:int}. Only return the JSON object with no other text or explanation.`;
